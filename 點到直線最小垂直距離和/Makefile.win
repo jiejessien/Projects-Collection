@@ -1,0 +1,40 @@
+# Project: Linear Regression
+# Makefile created by Dev-C++ 5.11
+
+CPP      = g++.exe
+CC       = gcc.exe
+WINDRES  = windres.exe
+OBJ      = main.o ReadPoints.o Line1Function.o Line2Function.o WriteResult.o
+LINKOBJ  = main.o ReadPoints.o Line1Function.o Line2Function.o WriteResult.o
+LIBS     = -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib" -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc
+INCS     = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
+CXXINCS  = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
+BIN      = "Linear Regression .exe"
+CXXFLAGS = $(CXXINCS) 
+CFLAGS   = $(INCS) 
+RM       = rm.exe -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CC) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+main.o: main.c
+	$(CC) -c main.c -o main.o $(CFLAGS)
+
+ReadPoints.o: ReadPoints.c
+	$(CC) -c ReadPoints.c -o ReadPoints.o $(CFLAGS)
+
+Line1Function.o: Line1Function.c
+	$(CC) -c Line1Function.c -o Line1Function.o $(CFLAGS)
+
+Line2Function.o: Line2Function.c
+	$(CC) -c Line2Function.c -o Line2Function.o $(CFLAGS)
+
+WriteResult.o: WriteResult.c
+	$(CC) -c WriteResult.c -o WriteResult.o $(CFLAGS)

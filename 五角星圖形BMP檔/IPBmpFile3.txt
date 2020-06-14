@@ -1,0 +1,14 @@
+--8bit Input BMP影像檔名：
+Blank.bmp
+--8bit Output BMP影像檔名：
+Draw_Star3.bmp
+--8bit Input BMP影像之寬度
+512
+--8bit Input BMP影像之高度
+512
+--B點座標
+(80,350)
+--C點座標
+(400,350)
+
+
